@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK" class="scroll-smooth dark" style="font-size: 16px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巧瑩 Katy | 科技個人履歷與學生檔案</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google 字型 & FontAwesome 圖標 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 連結自訂外部 CSS 樣式表 -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Microsoft JhengHei', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        darkbg: '#0f172a',
+                        darkcard: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="font-sans bg-slate-50 text-slate-800 dark:bg-darkbg dark:text-slate-200 transition-colors duration-300 min-h-screen">
+    <!-- ==================== 導航欄 (NAVBAR) ==================== -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-40 bg-white/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 2xl:h-24">
+                <!-- 標誌 (Logo) -->
+                <a href="#"
+                    class="font-mono text-xl 2xl:text-3xl font-bold tracking-wider text-cyan-600 dark:text-cyan-400 select-none">
+                    &lt;KATY/&gt;
+                </a>
+
+                <!-- 電腦版導航選單連結 -->
+                <div class="hidden md:flex items-center gap-8 font-mono text-sm 2xl:text-xl">
+                    <a href="#about" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">01.</span> 關於我</a>
+                    <a href="#skills" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">02.</span> 技術能力</a>
+                    <a href="#projects" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">03.</span> 競賽項目</a>
+                    <a href="#awards" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">04.</span> 榮譽獎項</a>
+                    <a href="#exchange" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">05.</span> 交流經歷</a>
+                    <a href="#education" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">06.</span> 教育背景</a>
+
+                    <!-- 輔助功能（切換主題與字型調整） -->
+                    <div class="flex items-center gap-3 pl-4 border-l border-slate-300 dark:border-slate-700">
+                        <button
+                            class="toggle-theme-btn p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400"
+                            title="切換深淺色主題">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline text-amber-400"></i>
+                        </button>
+                        <button id="font-dec-btn"
+                            class="p-1 px-2 rounded font-bold text-xs bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 hover:text-white transition-colors"
+                            title="縮小字型">A-</button>
+                        <button id="font-inc-btn"
+                            class="p-1 px-2 rounded font-bold text-xs bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 hover:text-white transition-colors"
+                            title="放大字型">A+</button>
+                    </div>
+                </div>
+
+                <!-- 手機版選單切換按鈕 -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button class="toggle-theme-btn p-2 rounded-lg text-slate-500 dark:text-slate-400">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline text-amber-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手機版展開選單容器 -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-darkbg border-b border-slate-200 dark:border-slate-800 font-mono px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#about" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">01.</span> 關於我</a>
+            <a href="#skills" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">02.</span> 技術能力</a>
+            <a href="#projects" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">03.</span> 競賽項目</a>
+            <a href="#awards" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">04.</span> 榮譽獎項</a>
+            <a href="#exchange" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">05.</span> 交流經歷</a>
+            <a href="#education" class="block py-2"><span class="text-cyan-500">06.</span> 教育背景</a>
+        </div>
+    </nav>
+
+    <!-- ==================== 首頁首圖 (HERO SECTION) ==================== -->
+    <header
+        class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden bg-slate-100 dark:bg-slate-900/40">
+        <div
+            class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10 py-12">
+            <div class="md:col-span-7 space-y-6 reveal">
+                <p class="font-mono text-cyan-600 dark:text-cyan-400 text-lg 2xl:text-2xl font-semibold tracking-wide">
+                    Hello World, 我是</p>
+                <h1 class="text-5xl sm:text-6xl 2xl:text-8xl font-black text-slate-900 dark:text-white tracking-tight">
+                    吳巧瑩 Katy</h1>
+                <h2
+                    class="text-2xl sm:text-3xl 2xl:text-5xl font-bold text-slate-600 dark:text-slate-400 font-mono flex items-center gap-3">
+                    <span class="text-emerald-500">&gt;</span> 學生與科技創新者
+                </h2>
+                <p
+                    class="text-slate-600 dark:text-slate-400 max-w-xl 2xl:text-2xl 2xl:max-w-3xl leading-relaxed text-base">
+                    一位樂觀且平易近人的科技愛好者。我對運用資訊及通訊科技（ICT）建構實用系統、解決現實生活中的社會問題有著極大的熱忱。
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4 font-mono">
+                    <a href="#projects"
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-semibold shadow-lg transition-all transform hover:-translate-y-0.5">查看專案成果</a>
+                    <a href="#awards"
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold transition-all">榮譽與成就</a>
+                    <a href=""
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold transition-all">English
+                        version </a>
+
+                </div>
+            </div>
+            <div class="md:col-span-5 flex justify-center reveal delay-200">
+                <div class="relative group max-w-[280px] sm:max-w-xs 2xl:max-w-md">
+                    <div
+                        class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000">
+                    </div>
+                    <div
+                        class="relative bg-white dark:bg-darkcard p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+                        <!-- 頭像佔位 (可自訂為您的照片) -->
+                        <div
+                            class="w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 dark:text-slate-600">
+                            <i class="fas fa-user text-6xl 2xl:text-8xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 關於我 (ABOUT ME) ==================== -->
+    <section id="about"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-4xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-10 2xl:mb-16">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">01.</span> 關於我</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div
+                class="bg-slate-50 dark:bg-darkbg rounded-lg border border-slate-300 dark:border-slate-700 overflow-hidden shadow-xl reveal delay-100">
+                <!-- 終端機風格視窗標題 -->
+                <div
+                    class="bg-slate-200 dark:bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-300 dark:border-slate-700">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span
+                        class="ml-4 text-xs 2xl:text-base font-mono text-slate-500 dark:text-slate-400">about_me.md</span>
+                    <div class="ml-auto">
+                        <a href="https://canva.link/xqcaazhwxrdaz1e" target="_blank"
+                            class="text-slate-500 hover:text-cyan-500 2xl:text-2xl transition-colors"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- 內容 -->
+                <div
+                    class="p-6 2xl:p-10 font-mono text-sm sm:text-base 2xl:text-xl text-slate-700 dark:text-slate-300 leading-relaxed space-y-4">
+                    <p><span class="text-slate-400 dark:text-slate-500">1 |</span> 你好！我是 <span
+                            class="text-cyan-600 dark:text-cyan-400 font-bold">吳巧瑩 (Katy)</span>。我畢業於 <span
+                            class="text-cyan-600 dark:text-cyan-400 font-bold">聖公會白約翰會督中學</span>，是一名熱衷於物聯網 (IoT)、人工智能
+                        (AI) 及地理空間技術 (Geospatial Tech) 的自導學習者。</p>
+                    <p><span class="text-slate-400 dark:text-slate-500">2 |</span> 我曾多次在 <span
+                            class="text-emerald-600 dark:text-emerald-400">香港理工大學</span>、<span
+                            class="text-emerald-600 dark:text-emerald-400">中國移動</span> 以及 <span
+                            class="text-emerald-600 dark:text-emerald-400">WRO 世界機器人奧林匹克</span>
+                        所舉辦的賽事中獲獎，著手解決如野豬分佈監測、海鮮冷鏈物流、與智慧都市連接等現實生活中的疑難雜症。</p>
+                    <p><span class="text-slate-400 dark:text-slate-500">3 |</span> 我的核心技能組合涵蓋 Python、MQTT 協定、QGIS
+                        地理資訊系統、MySQL 資料庫以及網頁數據爬取（Web Scraping）。我將這些技能廣泛應用在黑客松（Hackathon）、創客松（Maker Marathon）項目中，更曾代表學校遠赴
+                        <span class="text-cyan-600 dark:text-cyan-400">中國重慶</span> 參加全國性賽事並斬獲殊榮。
+                    </p>
+                    <p><span class="text-slate-400 dark:text-slate-500">4 |</span>
+                        我堅信科技應該用來服務人群。無論是無人機編隊表演、智慧城市數據儀表板，還是自主導航機器人，我都熱切地渴望學以致用、追求進步、探索未知領域。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 技術能力 (SKILLS) ==================== -->
+    <section id="skills" class="py-24 2xl:py-32">
+        <div class="max-w-5xl 2xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">02.</span> 技術能力</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-12">
+                <!-- 核心開發技能 -->
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-lg reveal delay-100">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-code text-cyan-600 dark:text-cyan-400"></i> Core Dev 軟體開發
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> Python 程式設計</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> HTML5 &amp; CSS3 網頁設計
+                        </li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> MySQL 數據關係架構</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> MQTT 通訊協定</li>
+                    </ul>
+                </div>
+
+                <!-- 數據科學與人工智能 -->
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-400 transition-all duration-300 shadow-lg reveal delay-200">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-chart-bar text-emerald-600 dark:text-emerald-400"></i> Data &amp; AI 數據與AI
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> Matplotlib 數據視覺化
+                        </li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> 地圖 API 整合</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> Python 網頁數據爬取
+                        </li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> AI 訓練與程式設計</li>
+                    </ul>
+                </div>
+
+                <!-- 系統工程與安全 -->
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition-all duration-300 shadow-lg reveal delay-300">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-terminal text-blue-500"></i> Engineering 系統工程
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> QGIS
+                            地理資訊空間分析</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> 網路安全防護
+                            (CADET2)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> 自主機器人研發
+                            (WRO)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> 低空無人機編排與應用
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 領導能力與公共服務 -->
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-rose-400 transition-all duration-300 shadow-lg reveal delay-400">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-users text-rose-400"></i> Leadership 團隊與協作
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> 活動策劃、組織與執行
+                        </li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> 朋輩與學弟妹導師計劃
+                        </li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> 學生社團與班委管理
+                        </li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> 跨文化交流與國際視野
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 競賽項目 (COMPETITION PROJECTS) ==================== -->
+    <section id="projects"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl 2xl:max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">03.</span> 競賽項目成果</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 2xl:gap-12">
+                <!-- 項目 1: 智慧城市野豬分佈儀表板 -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 glow-hover group shadow-md reveal delay-100 cursor-pointer"
+                    onclick="openDrawer('award-smartcity')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-cyan-600 dark:text-cyan-400"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 rounded-full">🥈
+                            亞軍 1st Runner Up</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                        野豬動態地理空間分析儀表板</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">香港理工大學 智慧城市挑戰賽 2025</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        為解決本港野豬侵擾問題，團隊利用理大空間分析技術。我們整合政府空間數據共享平台（CSDI）、OpenData 與網頁實時爬取的野豬出沒報告，在 QGIS 地圖上進行動態建模分析。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>Python</span><span>QGIS</span><span>MySQL</span><span>Web Scraping</span>
+                    </div>
+                </div>
+
+                <!-- 項目 2: 重慶 AIoT 馬拉松 -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 glow-hover group shadow-md reveal delay-200 cursor-pointer"
+                    onclick="openDrawer('award-chongqing')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-purple-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-purple-100 dark:bg-purple-400/10 text-purple-700 dark:text-purple-400 rounded-full">🌟
+                            高校組優秀獎</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-purple-500 transition-colors">
+                        AIoT 萬物比鄰 — 智慧物流</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">中國移動萬物比鄰物聯網創客馬拉松 2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        赴重慶參加全國創客總決賽。在高校雲集的賽場上，我們團隊「海鮮速遞」提出智慧供應鏈管理與物聯網概念設計，順利斬獲高校組優秀獎，極大拓寬了科技創新視野。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>AIoT</span><span>Python</span><span>IoT</span><span>物聯網</span>
+                    </div>
+                </div>
+
+                <!-- 項目 3: 中國移動 OneNET 創科比賽 -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 glow-hover group shadow-md reveal delay-200 cursor-pointer"
+                    onclick="openDrawer('award-onenet')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-emerald-600 dark:text-emerald-400"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-emerald-100 dark:bg-emerald-400/10 text-emerald-700 dark:text-emerald-400 rounded-full">🏆
+                            卓越獎 (前四強)</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        OneNET 物聯網智慧數據平台</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">中國移動香港 OneNET 創科比賽 2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        實時物聯網傳感數據平台上線運行。系統基於 MQTT 協定完成多終端傳輸，在 HTML 頁面上進行圖形儀表板顯示，並採用 Python Matplotlib 繪圖模組和 Google Map
+                        API 作地理空間疊加。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>MQTT</span><span>Python</span><span>Matplotlib</span><span>地圖 API</span>
+                    </div>
+                </div>
+
+                <!-- 項目 4: 共建香港物聯網創意發揮比賽 -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 glow-hover group shadow-md reveal delay-300 cursor-pointer"
+                    onclick="openDrawer('award-iot-creative')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-blue-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-blue-100 dark:bg-blue-400/10 text-blue-700 dark:text-blue-400 rounded-full">🏅
+                            勇奪 5 項大獎</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-500 transition-colors">
+                        海鮮速遞物聯網運輸監控系統</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">香港好故事 創意物聯網比賽 2023–2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        針對香港海鮮冷鏈物流的痛點，研發物聯網運輸監控系統。該作品一口氣奪得最具原創性方案、最佳科技運用、最佳口頭報告組別等五項大獎，實用與創新能力廣受好評。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>IoT</span><span>MQTT</span><span>Sensors</span><span>智慧物流</span>
+                    </div>
+                </div>
+
+                <!-- 項目 5: 中大 AI Hackathon -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 glow-hover group shadow-md reveal delay-300 cursor-pointer"
+                    onclick="openDrawer('award-hackathon')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-rose-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-rose-100 dark:bg-rose-400/10 text-rose-700 dark:text-rose-400 rounded-full">優異獎
+                            Merit Award</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-rose-500 transition-colors">
+                        CUHK AI Hackathon 快速原型研發</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">香港中文大學 AI Hackathon 2025</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        在極具壓力的 24 小時限時黑客松中，我們圍繞主辦方發布的社會痛點進行快速建模，運用機器學習 (ML) 模組完成一套人工智慧診斷原型系統，順利獲評優異獎。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>AI / ML</span><span>Python</span><span>Rapid Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- 項目 6: WRO 機器人競賽 -->
+                <div class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-100 cursor-pointer"
+                    onclick="openDrawer('award-wro')">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-yellow-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-yellow-100 dark:bg-yellow-400/10 text-yellow-700 dark:text-yellow-400 rounded-full">🥇
+                            金獎 + 最佳工程設計</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-yellow-500 transition-colors">
+                        WRO 太空任務智能導航機器人</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">世界機器人奧林匹克 (WRO HK) 夏季賽 2023</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        針對宇航任務競賽規則，團隊從零構建自主導航機器人。優化硬件物理防震結構、精心撰寫軌跡修正代碼，高精度完成任務點，最終奪得最高榮譽金獎與最佳工程設計獎。
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>Robotics</span><span>硬體設計</span><span>自動控制程式</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 榮譽與成就 (AWARDS) ==================== -->
+    <section id="awards" class="py-24 2xl:py-32">
+        <div class="max-w-6xl 2xl:max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">04.</span> 榮譽與成就</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <!-- 可點擊互動式 12 張成就卡片網格 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 2xl:gap-10">
+                <!-- 1. 理大智慧城市挑戰賽 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-smartcity')">
+                    <span class="text-3xl">🏙️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 理大空間數據庫</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">智慧城市與地理空間地圖競賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">亞軍 / 1st Runner-up</p>
+                    </div>
+                </div>
+
+                <!-- 2. 中大 AI Hackathon -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-hackathon')">
+                    <span class="text-3xl">🤖</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 中大工程學院</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">CUHK JC AI Hackathon 2025
+                        </p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">優異獎 / Certificate of Merit
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. 網絡攻防精英大賽 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-cadet')">
+                    <span class="text-3xl">🛡️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 警務處網罪科/數字辦</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">CADET2 網絡安全精英防護賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">優異獎 / Certificate of Merit
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. 重慶中國移動 IoT -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-chongqing')">
+                    <span class="text-3xl">🇨🇳</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024 · 中國重慶</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">中國移動物聯網馬拉松總決賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">高校組優秀獎 / Outstanding</p>
+                    </div>
+                </div>
+
+                <!-- 5. 中國移動 OneNET -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-onenet')">
+                    <span class="text-3xl">🏆</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024 · 中移香港</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">第五屆 OneNET 創科比賽（港區）</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">卓越獎 (前四強) / Excellence</p>
+                    </div>
+                </div>
+
+                <!-- 6. 香港好故事 IoT -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-iot-creative')">
+                    <span class="text-3xl">🚢</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024 · 星島日報/多元學習坊</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">共建香港物聯網創意發揮比賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">冠軍 (第1名) / Champion</p>
+                    </div>
+                </div>
+
+                <!-- 7. WRO 機械人夏季挑戰賽 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-wro')">
+                    <span class="text-3xl">🤖</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2023 · 世界機器人奧林匹克</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">WRO 智能太空自主航行挑戰賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">金獎及最佳工程設計獎</p>
+                    </div>
+                </div>
+
+                <!-- 8. 公民教育學會優秀主席 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-civic')">
+                    <span class="text-3xl">🏛️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 學校社團管理</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">公民教育學會領袖管理與服務</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">傑出學會主席大獎</p>
+                    </div>
+                </div>
+
+                <!-- 9. 大哥哥學姐導師計劃 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-bigbrother')">
+                    <span class="text-3xl">🤝</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 校園關懷與指導</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">「大哥哥大姐姐」朋輩引導計劃</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">優秀表現嘉許證書</p>
+                    </div>
+                </div>
+
+                <!-- 10. 大灣區低空飛行挑戰賽 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-lowaltitude')">
+                    <span class="text-3xl">🚁</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025 · 粵港澳大灣區學界</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">大灣區學界低空飛行應用挑戰賽</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">大會嘉許狀</p>
+                    </div>
+                </div>
+
+                <!-- 11. 學校 ICT 科目學業第一名 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-ict-prize')">
+                    <span class="text-3xl">💻</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024 · 學期學術表彰</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">高中資訊及通訊科技科優秀獎</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">全級學業成績第一名</p>
+                    </div>
+                </div>
+
+                <!-- 12. 體育健康計劃金銀章 -->
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-fitness')">
+                    <span class="text-3xl">🏃</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2020 - 2026 · 長期體能監測</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">中學生體適能獎勵計劃</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">榮獲多屆金章及銀章</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 交流經歷 (EXCHANGE) ==================== -->
+    <section id="exchange"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-5xl 2xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">05.</span> 交流經歷</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 愛爾蘭科技英語培訓 -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-xl p-6 2xl:p-10 flex flex-col h-full hover:border-cyan-500 transition-all shadow-md reveal delay-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-xs font-mono px-3 py-1 bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 rounded-full">🇮🇪
+                            23天浸潤式研學</span>
+                        <span class="text-xs font-mono text-slate-400">2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">愛爾蘭科技強化英語學習計劃</h3>
+                    <p class="text-xs text-slate-400 font-mono mb-4">Future Learning 語言學校 · 愛爾蘭都柏林</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        赴愛爾蘭進行為期三週的科技與文化考察，入住當地寄宿家庭完成深度文化融合。順利完成共 66 小時的密集培訓，包括上午的跨文化溝通與下午的高強度 STEAM
+                        專題實作。在協同問題解決上獲評為「獨立運作」等級，更在數碼資訊檢索、數據存儲組織及資訊來源篩選上獲得頂尖的 **Proficient 級別**認證。
+                    </p>
+                    <div
+                        class="bg-white dark:bg-darkcard p-3 rounded-lg border border-slate-100 dark:border-slate-800/60 mb-4 font-mono text-xs italic text-slate-500 dark:text-slate-400">
+                        "超有禮貌，非常刻苦和專注，她的成果就是她能力最好的證明（Work speaks louder than words）。" – 外籍班主任導師評語
+                    </div>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-2 pt-2">
+                        <span>• Proficient 資訊篩選</span>
+                        <span>• STEAM 專案原型</span>
+                        <span>• 獨立協作解決問題</span>
+                    </div>
+                </div>
+
+                <!-- 馬來西亞文化藝術研學 -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-xl p-6 2xl:p-10 flex flex-col h-full hover:border-emerald-500 transition-all shadow-md reveal delay-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-xs font-mono px-3 py-1 bg-emerald-100 dark:bg-emerald-400/10 text-emerald-700 dark:text-emerald-400 rounded-full">🇲🇾
+                            藝術與民俗考究</span>
+                        <span class="text-xs font-mono text-slate-400">學校提名代表</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">馬來西亞藝術文化交流計劃</h3>
+                    <p class="text-xs text-slate-400 font-mono mb-4">校級官方代表團</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        獲學校推薦加入代表團，深入探查馬來西亞多元民族的文化、歷史藝術與社會生態環境。在異國文化情境下開拓了全球化思考框架，深入分析本港與東南亞地帶在智慧交通和社區設施可持續發展上的異同。
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-2 pt-2">
+                        <span>• 區域傳統民俗藝術研究</span>
+                        <span>• 國際視野擴展</span>
+                        <span>• 異地文化宣講與溝通</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 教育背景 (EDUCATION) ==================== -->
+    <section id="education" class="py-24 2xl:py-32">
+        <div class="max-w-4xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">06.</span> 教育背景</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="space-y-12 reveal delay-100">
+                <!-- 中學修業檔案 -->
+                <div class="relative pl-8 border-l-2 border-cyan-500">
+                    <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-[9px] top-1"></div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">聖公會白約翰會督中學</h3>
+                    <p class="text-slate-500 font-mono text-sm mt-1 mb-4">2020年9月 – 2026年5月 · 香港中學文憑考試 (HKDSE) 課程</p>
+                    <ul class="list-none space-y-2 text-slate-600 dark:text-slate-400 font-mono text-sm">
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span>
+                            <b>選修科目：</b>資訊及通訊科技 (ICT)、物理、數學延伸單元二 (M2)
+                        </li>
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span>
+                            <b>校內領袖：</b>班長及班會文書 (21-26)、公民教育學會主席 (24-25)
+                        </li>
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span> <b>操行等級：</b>優良
+                            (Very Good)</li>
+                    </ul>
+                </div>
+
+                <!-- 官方校長推薦信評語（極具含金量，對大學老師極有說服力） -->
+                <div
+                    class="bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 rounded-xl p-6 md:p-8 font-mono shadow-inner">
+                    <div class="flex items-center gap-3 mb-4 text-emerald-600 dark:text-emerald-400">
+                        <i class="fas fa-quote-left text-2xl"></i>
+                        <span class="text-xs uppercase tracking-wider font-bold">官方推薦信綜合評語 (School Testimonial)</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                        "巧瑩是一位樂觀且平易近人的學生，對學習有著強烈的熱忱，尤其是在資訊及通訊科技（ICT）領域。她曾參與多個本地及內地的科學與技術競賽，展現了卓越的團隊合作、問題解決、創造性思維和自主學習能力，並在此過程中獲得多個獎項。巧盈志向遠大，時刻不忘肩負的社會責任，她渴望利用科技來解決現實世界的問題，造福社區。她也積極尋求豐富自己的學習經歷，曾參與多個交流項目，如前往馬來西亞體驗當地的藝術和文化，以及深入體驗愛爾蘭的研學與寄宿家庭生活環境。"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 頁尾區塊 (FOOTER) ==================== -->
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 text-center font-mono text-xs text-slate-500">
+        <p>© 2026 Katy Ng. 使用 CSS &amp; 雲端原生 JavaScript 編寫。</p>
+        <p class="mt-1 text-slate-400">已針對手機、平板、電腦和電視屏幕等各類顯示設備完成自適應佈局調校。</p>
+    </footer>
+
+    <!-- ==================== 側邊彈出詳細內容抽屜 (DETAIL DRAWER) ==================== -->
+    <div id="overlay-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"
+        onclick="closeDrawer()"></div>
+
+    <div id="details-drawer"
+        class="fixed top-0 right-0 h-full w-full sm:w-[500px] 2xl:w-[700px] bg-white dark:bg-darkbg z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <!-- 抽屜頂部標題 -->
+        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span id="drawer-emoji" class="text-2xl">🏆</span>
+                <span id="drawer-meta" class="text-xs font-mono text-slate-400 uppercase tracking-wider">評審指標資料庫</span>
+            </div>
+            <button onclick="closeDrawer()"
+                class="text-slate-400 hover:text-slate-600 dark:hover:text-white p-2 text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- 抽屜內部滑動主要區域 -->
+        <div class="p-8 space-y-6 flex-grow overflow-y-auto">
+            <h3 id="drawer-title" class="text-2xl 2xl:text-4xl font-bold text-slate-900 dark:text-white">獎項名稱</h3>
+
+            <div id="drawer-award-badge"
+                class="inline-block px-3 py-1.5 rounded-lg bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 font-mono text-sm font-bold border border-cyan-200 dark:border-cyan-800/30">
+                獲得的名次獎項
+            </div>
+
+            <div class="space-y-4">
+                <h4
+                    class="font-mono text-xs text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+                    項目概述與任務說明</h4>
+                <p id="drawer-desc" class="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
+                    概述內容載入中...</p>
+            </div>
+
+            <div class="space-y-4">
+                <h4
+                    class="font-mono text-xs text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+                    所得技術啟示與核心成長指標</h4>
+                <ul id="drawer-bullets" class="space-y-3 font-mono text-xs md:text-sm text-slate-500 list-none">
+                    <!-- JavaScript 將在此動態生成清單 -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- 抽屜尾部授權資訊 -->
+        <div
+            class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-darkcard/20 font-mono text-xs text-slate-400 flex justify-between items-center">
+            <span>主辦及發證機構：</span>
+            <span id="drawer-org" class="font-bold text-slate-600 dark:text-slate-300">組織/機關名稱</span>
+        </div>
+    </div>
+
+
+    <!-- ==================== 頁面控制 JavaScript 代碼 ==================== -->
+    <script>
+        // --- 1. 榮譽抽屜資料庫映射（與卡片一對一綁定） ---
+        const drawerData = {
+            'award-smartcity': {
+                emoji: '🏙️',
+                meta: '2025 · 香港理工大學',
+                title: '智慧城市挑戰賽 2025',
+                award: '🥈 亞軍 / 1st Runner-up',
+                desc: '本賽事由香港理工大學土地測量及地理資訊學系主辦。我們團隊針對香港都市野豬在郊野邊緣侵擾居民、交通的 municipal 問題，開發了一套地理空間情報可視化平台。',
+                bullets: [
+                    '<strong>地理資訊科技實踐：</strong> 精通 QGIS 圖層操作、Python 空間坐標點描繪腳本與 MySQL 後端數據交互。',
+                    '<strong>多源大數據融合：</strong> 學會分析及結合政府空間數據共享平台（CSDI）、Open Data 公開數據與實時網頁數據爬蟲，提取有價值的環境動態特徵。'
+                ],
+                org: '香港理工大學 (PolyU)'
+            },
+            'award-hackathon': {
+                emoji: '🤖',
+                meta: '2025 · 中文大學工程與教育學院',
+                title: '中大賽馬會「智」為未來計劃︰AI Hackathon 2025',
+                award: '🏅 優異獎 / Certificate of Merit',
+                desc: '賽事要求在短短一天內完成從痛點剖析、代碼開發、算法擬合到原型展示的急速開發。考驗開發者在時間極度受限下的技術應變、方案宣講能力與團隊協調度。',
+                bullets: [
+                    '<strong>AI應用落地：</strong> 引發了我對人工智能（AI）模型訓練與程式設計的極大熱忱與實操經驗。',
+                    '<strong>敏捷開發實戰：</strong> 錘煉了在緊迫時間窗口內整合開源 AI 套件、部署快速原型的敏捷迭代邏輯。'
+                ],
+                org: '香港中文大學 (CUHK)'
+            },
+            'award-cadet': {
+                emoji: '🛡️',
+                meta: '2025 · 香港互聯網註冊管理/數字辦/警務處網罪科',
+                title: '網絡攻防精英培訓暨攻防大賽 2025 (CADET2)',
+                award: '🏅 優異獎 / Certificate of Merit',
+                desc: '旨在培養下一代頂尖網絡安全專家的專業培訓及仿真錦標賽。賽事模擬了高度真實的網絡滲透與防禦情境。',
+                bullets: [
+                    '<strong>模擬攻防實戰：</strong> 經歷了 48 小時高強度的在線模擬對抗與系統防護實操。',
+                    '<strong>前沿技術儲備：</strong> 奠定了操作專業級網絡安全工具、流量捕獲包分析及預防外部惡意溢出的底層攻防思維。'
+                ],
+                org: '數字政策辦公室（DPO）及香港警務處網絡安全及科技罪案調查科'
+            },
+            'award-chongqing': {
+                emoji: '🇨🇳',
+                meta: '2024 · 中國重慶創客總決賽',
+                title: '2024年重慶中國移動萬物比鄰物聯網創客馬拉松大賽',
+                award: '🌟 高校組優秀獎 / Outstanding Award',
+                desc: '我們從香港賽區突出重圍，挺進重慶總決賽，並作為全場極少數的中學生代表，直接與來自內地頂尖高校的大學參賽團隊同台競技。',
+                bullets: [
+                    '<strong>開闊國際視野：</strong> 在高水準的全國高校創客賽場中競賽，不僅錘煉了自身的表達能力，也深化了對前沿科技應用尺度的認知。',
+                    '<strong>高難度技術答辯：</strong> 在業界大咖與高校導師評審團面前，親自上台展示我們團隊基於物聯網技術的智慧物流與傳感解決方案，抗壓能力顯著提升。'
+                ],
+                org: '中國移動 (China Mobile)'
+            },
+            'award-onenet': {
+                emoji: '🏆',
+                meta: '2024 · 中國移動香港',
+                title: '第五屆中國移動OneNET科創比賽',
+                award: '卓越獎 / Excellence Award (前四強代表)',
+                desc: '全市矚目的創科專題競賽，考驗參賽者如何利用中國移動 OneNET 物聯網平台解決各類社會痛點。',
+                bullets: [
+                    '<strong>實時傳輸管線建構：</strong> 系統化地實現了基於 MQTT 協定的實時傳感數據採集與雲端接收。',
+                    '<strong>地理地圖數據渲染：</strong> 首次在瀏覽器頁面中結合 Map API，利用 Python Matplotlib 動態顯示帶有精準地理標記的冷鏈物流數據。'
+                ],
+                org: '中國移動香港 China Mobile HK'
+            },
+            'award-iot-creative': {
+                emoji: '🚢',
+                meta: '2023 - 2024 · 香港好故事',
+                title: '香港好故事 - 共建香港物聯網創意發揮比賽',
+                award: '🥇 冠軍 / 1st Place Champion',
+                desc: '探索如何運用物聯網（IoT）智慧硬體解決香港本地的物流、運輸和供應鏈痛點。',
+                bullets: [
+                    '<strong>將課堂知識落地：</strong> 將 ICT 課堂上學到的物聯網概念，直接對接現實物流公司的生鮮供應鏈冷鏈保鮮問題。',
+                    '<strong>領導力與全組調度：</strong> 作為小組核心推動技術設計與代碼實現，推動團隊在創意、技術和最終口頭報告中均拿下最高分。'
+                ],
+                org: '多元學習坊 · 教育倡行 · 星島日報'
+            },
+            'award-wro': {
+                emoji: '🤖',
+                meta: '2023 · 世界機器人奧林匹克',
+                title: 'World Robot Olympiad 2023 - 香港機械人夏季挑戰賽',
+                award: '🥇 金獎 (Gold Award) 及最佳工程設計大獎',
+                desc: '本賽事高度考驗自主式機器人硬件機構搭建與動態反饋程序調試的穩定度。',
+                bullets: [
+                    '<strong>工程設計追求卓越：</strong> 因為在機身重心分佈、模塊化爪臂、以及應對複雜地形時的良好阻尼防震結構，我們榮獲代表硬體最高認可的「最佳工程設計大獎」。',
+                    '<strong>封閉邏輯調校：</strong> 在模擬太空軌道任務中，精心調度紅外線傳感器反饋代碼，使機器人在高難度障礙環境下仍能自主導航。'
+                ],
+                org: 'WRO 世界機器人奧林匹克香港組委會'
+            },
+            'award-civic': {
+                emoji: '🏛️',
+                meta: '2024 - 2025 · 學生會社團卓越領袖',
+                title: '公民教育學會領袖管理與服務',
+                award: '🏆 傑出學會主席大獎 (Outstanding Chairperson)',
+                desc: '表彰我在校園公共服務、組織建設、以及大型校園公共宣講活動策劃與執行中的傑出貢獻。',
+                bullets: [
+                    '<strong>校園活動組織與執行：</strong> 面向全校及社區策劃了一系列公民教育工作坊、互動研討會，並主導承辦了校園嘉年華攤位，吸引數百名師生參與。',
+                    '<strong>領導力修煉：</strong> 學會了妥善協調組內成員分工、規劃活動預算、製定進度表，展現優秀的學生領袖治理能力。'
+                ],
+                org: '聖公會白約翰會督中學'
+            },
+            'award-bigbrother': {
+                emoji: '🤝',
+                meta: '2023 - 2025 · 社區與校園朋輩指導',
+                title: '大哥哥大姐姐學員關懷與導師計劃',
+                award: '🥇 優秀表現嘉許證書 / Certificate of Excellence',
+                desc: '一項跨越兩年的長期心靈與學術關懷計劃。我們 senior 導師與中一新生結成一對一朋輩伴侶，協助其順利適應中學生活與課業挑戰。',
+                bullets: [
+                    '<strong>朋輩疏導與學業輔導：</strong> 定期召集新生成長工作坊，協助學弟妹解決剛升入中學時面臨的學術困擾與人際摩擦。',
+                    '<strong>溝通與同理心：</strong> 掌握了極其出色的傾聽技巧與同理心溝通策略，深受學弟妹及社工導師的信賴。'
+                ],
+                org: '聖公會白約翰會督中學及童軍知友社學校社工服務'
+            },
+            'award-lowaltitude': {
+                emoji: '🚁',
+                meta: '2024 - 2025 · 粵港澳大灣區學界科技賽',
+                title: '粵港澳大灣區學界低空飛行應用挑戰賽',
+                award: '📜 嘉許狀 / Certificate of Commendation',
+                desc: '探究低空領域飛行器運作模式、無人機編隊路徑控制以及未來低空智慧物流場景的大灣區競賽。',
+                bullets: [
+                    '<strong>無人機飛行案例：</strong> 分析了在複雜市區氣流和高樓環境中，物流無人機編隊防撞和最優配送航線的算法模型。',
+                    '<strong>區域協作探索：</strong> 與來自大灣區其他城市的科技學子共同討論智能空港與數字低空經濟的落地可行性。'
+                ],
+                org: '大灣區學界低空飛行應用挑戰賽組委會'
+            },
+            'award-ict-prize': {
+                emoji: '💻',
+                meta: '2023 - 2024 · 學期學術卓越獎',
+                title: '中學 ICT 科目學業第一名成績優良獎',
+                award: '🥇 全年級第一名 (First in Class Cohort)',
+                desc: '表彰我在整個學年中，資訊及通訊科技科（ICT）綜合評估、日常編程小組項目、以及最終期末 DSE 模擬考卷中取得全年級最優異的總成績。',
+                bullets: [
+                    '<strong>學科基礎紮實：</strong> 展現了在數據庫結構設計、網絡架構、數據安全、程序編程設計等知識板塊上的深厚底子。',
+                    '<strong>實踐化繁為簡：</strong> 成功將課堂中的理論框架融入到校外競賽專案中，實現「產、學、研」的良性循環。'
+                ],
+                org: '聖公會白約翰會督中學'
+            },
+            'award-fitness': {
+                emoji: '🏃',
+                meta: '2020 - 2026 · 長期身體素質監測',
+                title: '香港中學生體適能獎勵計劃',
+                award: '🏅 蟬聯多屆金章及銀章學術表彰',
+                desc: '由香港官方體適能評審機構主辦，長年監測中學生的心肺功能、肌肉力量、柔韌度等核心生理素質。',
+                bullets: [
+                    '<strong>運動健康指標：</strong> 在多屆測評中取得優秀級別，分別蟬聯金獎（22-23、23-24年度）與銀獎（24-25年度）。',
+                    '<strong>嚴謹自律作風：</strong> 保持良好的運動習慣與強健的體魄，這也是我支撐日常高強度科研代碼開發與創客松競賽的堅實保障。'
+                ],
+                org: '香港體適能獎勵計劃組委會'
+            }
+        };
+
+        // --- 2. 抽屜滑出與遮罩層 UI 控制函式 ---
+        function openDrawer(id) {
+            const data = drawerData[id];
+            if (!data) return;
+
+            document.getElementById('drawer-emoji').innerText = data.emoji;
+            document.getElementById('drawer-meta').innerText = data.meta;
+            document.getElementById('drawer-title').innerText = data.title;
+            document.getElementById('drawer-award-badge').innerHTML = data.award;
+            document.getElementById('drawer-desc').innerHTML = data.desc;
+            document.getElementById('drawer-org').innerText = data.org;
+
+            const listContainer = document.getElementById('drawer-bullets');
+            listContainer.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.className = 'flex gap-2 items-start';
+                li.innerHTML = `<span class="text-cyan-500">▹</span> <span>${b}</span>`;
+                listContainer.appendChild(li);
+            });
+
+            const backdrop = document.getElementById('overlay-backdrop');
+            const drawer = document.getElementById('details-drawer');
+
+            backdrop.classList.remove('hidden');
+            setTimeout(() => backdrop.classList.add('opacity-100'), 10);
+            drawer.classList.remove('translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeDrawer() {
+            const backdrop = document.getElementById('overlay-backdrop');
+            const drawer = document.getElementById('details-drawer');
+
+            backdrop.classList.remove('opacity-100');
+            drawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+            setTimeout(() => backdrop.classList.add('hidden'), 300);
+        }
+
+        // --- 3. 字型動態縮放（無障礙閱讀模組） ---
+        const htmlRoot = document.documentElement;
+        let currentSize = 16;
+        document.getElementById('font-inc-btn').addEventListener('click', () => {
+            if (currentSize < 24) { currentSize += 1; htmlRoot.style.fontSize = currentSize + 'px'; }
+        });
+        document.getElementById('font-dec-btn').addEventListener('click', () => {
+            if (currentSize > 12) { currentSize -= 1; htmlRoot.style.fontSize = currentSize + 'px'; }
+        });
+
+        // --- 4. 滾動淡入動畫 (Scroll Reveal) ---
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(r => {
+                const windowHeight = window.innerHeight;
+                const elementTop = r.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) r.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // --- 5. 亮色/深色主題本地記憶切換邏輯 ---
+        const toggleThemeBtns = document.querySelectorAll('.toggle-theme-btn');
+        const toggleTheme = () => {
+            htmlRoot.classList.toggle('dark');
+            const isDark = htmlRoot.classList.contains('dark');
+            localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+        };
+        toggleThemeBtns.forEach(btn => btn.addEventListener('click', toggleTheme));
+        if (localStorage.getItem('portfolio-theme') === 'light') htmlRoot.classList.remove('dark');
+
+        // --- 6. 手機版菜單點擊控制 ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    </script>
+</body>
+
+</html>

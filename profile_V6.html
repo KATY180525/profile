@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" style=\"font-size: 16px;\">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katy | Tech Portfolio & Student Profiles</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        darkbg: '#0f172a',
+                        darkcard: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="font-sans bg-slate-50 text-slate-800 dark:bg-darkbg dark:text-slate-200 transition-colors duration-300 min-h-screen">
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-40 bg-white/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 2xl:h-24">
+                <a href="#"
+                    class="font-mono text-xl 2xl:text-3xl font-bold tracking-wider text-cyan-600 dark:text-cyan-400 select-none">
+                    &lt;KATY/&gt;
+                </a>
+
+                <div class="hidden md:flex items-center gap-8 font-mono text-sm 2xl:text-xl">
+                    <a href="#about" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">01.</span> About</a>
+                    <a href="#skills" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">02.</span> Skills</a>
+                    <a href="#projects" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">03.</span> Projects</a>
+                    <a href="#awards" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">04.</span> Achievements</a>
+                    <a href="#exchange" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">05.</span> Exchange</a>
+                    <a href="#education" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"><span
+                            class="text-cyan-600 dark:text-cyan-400">06.</span> Education</a>
+
+                    <div class="flex items-center gap-3 pl-4 border-l border-slate-300 dark:border-slate-700">
+                        <button
+                            class="toggle-theme-btn p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400"
+                            title="Toggle Light/Dark Theme">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline text-amber-400"></i>
+                        </button>
+                        <button id="font-dec-btn"
+                            class="p-1 px-2 rounded font-bold text-xs bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 hover:text-white transition-colors"
+                            title="Decrease Font Size">A-</button>
+                        <button id="font-inc-btn"
+                            class="p-1 px-2 rounded font-bold text-xs bg-slate-200 dark:bg-slate-800 hover:bg-cyan-500 hover:text-white transition-colors"
+                            title="Increase Font Size">A+</button>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <button class="toggle-theme-btn p-2 rounded-lg text-slate-500 dark:text-slate-400">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline text-amber-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-400 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white dark:bg-darkbg border-b border-slate-200 dark:border-slate-800 font-mono px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#about" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">01.</span> About</a>
+            <a href="#skills" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">02.</span> Skills</a>
+            <a href="#projects" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">03.</span> Projects</a>
+            <a href="#awards" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">04.</span> Achievements</a>
+            <a href="#exchange" class="block py-2 border-b border-slate-100 dark:border-slate-800"><span
+                    class="text-cyan-500">05.</span> Exchange</a>
+            <a href="#education" class="block py-2"><span class="text-cyan-500">06.</span> Education</a>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <header
+        class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden bg-slate-100 dark:bg-slate-900/40">
+        <div
+            class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10 py-12">
+            <div class="md:col-span-7 space-y-6 reveal">
+                <p class="font-mono text-cyan-600 dark:text-cyan-400 text-lg 2xl:text-2xl font-semibold tracking-wide">
+                    Hello World, my name is</p>
+                <h1 class="text-5xl sm:text-6xl 2xl:text-8xl font-black text-slate-900 dark:text-white tracking-tight">
+                    KATY NG HAU YING</h1>
+                <h2
+                    class="text-2xl sm:text-3xl 2xl:text-5xl font-bold text-slate-600 dark:text-slate-400 font-mono flex items-center gap-3">
+                    <span class="text-emerald-500">&gt;</span> Student &amp; Technology Innovator
+                </h2>
+                <p
+                    class="text-slate-600 dark:text-slate-400 max-w-xl 2xl:text-2xl 2xl:max-w-3xl leading-relaxed text-base">
+                    An optimistic and approachable researcher with a deep passion for building practical systems using
+                    Information and Communication Technology to solve real-world community issues.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4 font-mono">
+                    <a href="#projects"
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-semibold shadow-lg transition-all transform hover:-translate-y-0.5">View
+                        Research Work</a>
+                    <a href="#awards"
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold transition-all">Honors
+                        &amp; Accomplishments</a>
+                    <a href=""
+                        class="px-6 py-3 2xl:px-10 2xl:py-5 2xl:text-xl rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold transition-all">
+                        中文版</a>
+                </div>
+            </div>
+            <div class="md:col-span-5 flex justify-center reveal delay-200">
+                <div class="relative group max-w-[280px] sm:max-w-xs 2xl:max-w-md">
+                    <div
+                        class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000">
+                    </div>
+                    <div
+                        class="relative bg-white dark:bg-darkcard p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+                        <!--photo-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-4xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="flex items-center gap-4 mb-10 2xl:mb-16">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">01.</span> About Me</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div
+                class="bg-slate-50 dark:bg-darkbg rounded-lg border border-slate-300 dark:border-slate-700 overflow-hidden shadow-xl reveal delay-100">
+                <!-- Mac-style Window Header -->
+                <div
+                    class="bg-slate-200 dark:bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-300 dark:border-slate-700">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span
+                        class="ml-4 text-xs 2xl:text-base font-mono text-slate-500 dark:text-slate-400">about_me.md</span>
+                    <div class="ml-auto">
+                        <a href="https://canva.link/xqcaazhwxrdaz1e" target="_blank"
+                            class="text-slate-500 hover:text-cyan-500 2xl:text-2xl transition-colors"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <!-- Content -->
+                <div
+                    class="p-6 2xl:p-10 font-mono text-sm sm:text-base 2xl:text-xl text-slate-700 dark:text-slate-300 leading-relaxed space-y-4">
+                    <p><span class="text-slate-400 dark:text-slate-500">1 |</span> Hello! My name is <span
+                            class="text-cyan-600 dark:text-cyan-400 font-bold">NG HAU YING (Katy)</span>. I'm a graduate
+                        of <span class="text-cyan-600 dark:text-cyan-400 font-bold">S.K.H. Bishop Baker Secondary
+                            School</span> and a passionate builder at the intersection of IoT, AI, and geospatial
+                        technology.</p>
+                    <p><span class="text-slate-400 dark:text-slate-500">2 |</span> I've competed and won at events
+                        hosted by <span class="text-emerald-600 dark:text-emerald-400">Hong Kong PolyU</span>, <span
+                            class="text-emerald-600 dark:text-emerald-400">China Mobile</span>, and the <span
+                            class="text-emerald-600 dark:text-emerald-400">WRO</span> — tackling real-world challenges
+                        like wild-boar population management, seafood logistics, and urban connectivity.</p>
+                    <p><span class="text-slate-400 dark:text-slate-500">3 |</span> My toolkit includes Python, MQTT,
+                        QGIS, MySQL, and web scraping — skills I've applied in hackathons, maker marathons, and an
+                        international competition trip to <span class="text-cyan-600 dark:text-cyan-400">Chongqing,
+                            China</span>.</p>
+                    <p><span class="text-slate-400 dark:text-slate-500">4 |</span> I believe technology should solve
+                        problems that matter. Whether it's a drone show, a smart city dashboard, or a robotics build,
+                        I'm always learning something new and pushing my limits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="py-24 2xl:py-32">
+        <div class="max-w-5xl 2xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">02.</span> Tech Stack & Competencies</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 2xl:gap-12">
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-lg reveal delay-100">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-code text-cyan-600 dark:text-cyan-400"></i> Core Dev
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> Python</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> HTML5 &amp; CSS3</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> MySQL Databases</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-cyan-600 dark:text-cyan-400"></i> MQTT Protocol</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-400 transition-all duration-300 shadow-lg reveal delay-200">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-chart-bar text-emerald-600 dark:text-emerald-400"></i> Data &amp; AI
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> Matplotlib</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> Map APIs Fusion
+                        </li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> Web Scraping</li>
+                        <li class="flex items-center gap-2"><i
+                                class="fas fa-caret-right text-emerald-600 dark:text-emerald-400"></i> AI Model Training
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition-all duration-300 shadow-lg reveal delay-300">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-terminal text-blue-500"></i> Engineering
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> QGIS
+                            Spatial Analysis</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i>
+                            Cybersecurity (CADET2)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> Robotics
+                            (WRO)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> Low
+                            Altitude Flight</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-white dark:bg-darkcard p-8 2xl:p-12 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-rose-400 transition-all duration-300 shadow-lg reveal delay-400">
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                        <i class="fas fa-users text-rose-400"></i> Leadership
+                    </h3>
+                    <ul class="space-y-3 2xl:space-y-5 font-mono text-slate-600 dark:text-slate-400 2xl:text-xl">
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> Event
+                            Coordination</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> Student
+                            Mentorship</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i> Club
+                            Governance</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-rose-400"></i>
+                            Cross-border Exchange</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl 2xl:max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">03.</span> Competition Projects</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 2xl:gap-12">
+
+                <!-- Smart City -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-100">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-cyan-600 dark:text-cyan-400"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 rounded-full">🥈
+                            1st Runner Up</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                        Wild Boar Smart City Dashboard</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">Build a Smart City Competition 2025 · PolyU</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        An interactive geospatial dashboard addressing Hong Kong's wild boar problem. Integrated CSDI,
+                        OpenData, and web-scraped real-time data into QGIS maps and Python analytics to give users an
+                        intuitive visual report of boar incidents.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>Python</span><span>QGIS</span><span>MySQL</span><span>Web Scraping</span>
+                    </div>
+                </div>
+
+                <!-- Chongqing AIoT -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-200">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-purple-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-purple-100 dark:bg-purple-400/10 text-purple-700 dark:text-purple-400 rounded-full">🌟
+                            優秀獎 Outstanding</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-purple-500 transition-colors">
+                        AIoT 萬物比鄰 — 海鮮速遞</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">中國移動 AIoT Competition · Chongqing 2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        International competition in Chongqing, competing alongside top university teams. Presented an
+                        AIoT logistics concept and achieved Outstanding Award in the university finals bracket. A
+                        formative cross-border experience.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>AIoT</span><span>Python</span><span>IoT</span><span>International</span>
+                    </div>
+                </div>
+
+                <!-- China Mobile IoT -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-200">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-emerald-600 dark:text-emerald-400"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-emerald-100 dark:bg-emerald-400/10 text-emerald-700 dark:text-emerald-400 rounded-full">🏆
+                            卓越獎 Top 4</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        IoT Data Platform — 海鮮速遞</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">China Mobile OneNET 創科比賽 2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        Real-time IoT monitoring platform using MQTT for device communication, HTML dashboards for data
+                        visualisation, and Matplotlib charts combined with map APIs to display geo-tagged sensor
+                        readings across a live logistics network.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>MQTT</span><span>Python</span><span>HTML</span><span>Matplotlib</span><span>Map API</span>
+                    </div>
+                </div>
+
+                <!-- Hong Kong Good Story IoT -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-300">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-blue-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-blue-100 dark:bg-blue-400/10 text-blue-700 dark:text-blue-400 rounded-full">🏅
+                            5 Awards</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-500 transition-colors">
+                        Smart Seafood Logistics IoT System</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">香港好故事 IoT Competition 2023–2024</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        An end-to-end IoT solution tackling Hong Kong's transport &amp; logistics challenges. Won Most
+                        Original Solution, Best Tech Application, Best Oral Presentation, Outstanding IoT Solution, and
+                        Distinguished IoT Solution.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>IoT</span><span>MQTT</span><span>Python</span><span>HTML</span>
+                    </div>
+                </div>
+
+                <!-- AI Hackathon -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-300">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-rose-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-rose-100 dark:bg-rose-400/10 text-rose-700 dark:text-rose-400 rounded-full">Merit
+                            Award</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-rose-500 transition-colors">
+                        AI Hackathon 2025</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">AI Hackathon 2025 · Merit Award</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        Participated in a fast-paced AI hackathon, applying machine learning and AI techniques to a
+                        real-world problem brief under time pressure. Awarded Merit for solution quality and innovation.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>AI / ML</span><span>Python</span><span>Rapid Prototyping</span>
+                    </div>
+                </div>
+
+                <!-- WRO Robotics -->
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-lg p-6 2xl:p-10 flex flex-col h-full hover:-translate-y-2 transition-transform duration-300 glow-hover group shadow-md reveal delay-100">
+                    <div class="flex justify-between items-center mb-6 2xl:mb-10">
+                        <i class="far fa-folder text-4xl 2xl:text-6xl text-yellow-500"></i>
+                        <span
+                            class="text-xs font-mono px-2 py-1 bg-yellow-100 dark:bg-yellow-400/10 text-yellow-700 dark:text-yellow-400 rounded-full">🥇
+                            Gold + Best Engineering</span>
+                    </div>
+                    <h3
+                        class="text-xl 2xl:text-3xl font-bold text-slate-900 dark:text-white mb-1 group-hover:text-yellow-500 transition-colors">
+                        WRO Space Explorer Robot</h3>
+                    <p class="text-xs font-mono text-slate-400 mb-3">WRO HK 夏季挑戰賽 2023 · Secondary School Division</p>
+                    <p
+                        class="text-slate-600 dark:text-slate-400 2xl:text-xl text-sm 2xl:leading-relaxed mb-6 flex-grow">
+                        Designed and built an autonomous robot for the Astronaut Challenge. Achieved Gold Award and Best
+                        Engineering Design — recognised for mechanical innovation and programming logic in a competitive
+                        field.
+                    </p>
+                    <div class="font-mono text-xs 2xl:text-lg text-slate-500 flex flex-wrap gap-3">
+                        <span>Robotics</span><span>Mechanical Design</span><span>Programming</span>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AWARDS ==================== -->
+    <section id="awards" class="py-24 2xl:py-32">
+        <div class="max-w-6xl 2xl:max-w-[90vw] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">04.</span> Honors & Achievements</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 2xl:gap-10">
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-smartcity')">
+                    <span class="text-3xl">🏙️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl group-hover:text-cyan-500">
+                            Build a Smart City Competition</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">1st Runner-up / 亞軍</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-hackathon')">
+                    <span class="text-3xl">🤖</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">CUHK JC AI Hackathon 2025
+                        </p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Merit Award / 優異獎</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-cadet')">
+                    <span class="text-3xl">🛡️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">Cyber Attack &amp; Defence
+                            Tournament</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Merit Award / 優異獎</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-chongqing')">
+                    <span class="text-3xl">🇨🇳</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">China Mobile AIOT Maker
+                            Marathon</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Outstanding / 高校組優秀獎</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-onenet')">
+                    <span class="text-3xl">🏆</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">5th China Mobile OneNET
+                            Competition</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Excellence Award / 卓越獎</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-iot-creative')">
+                    <span class="text-3xl">🚢</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">Building HK IoT Creative
+                            Competition</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">1st Place Champion / 冠軍</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-wro')">
+                    <span class="text-3xl">🤖</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2023</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">World Robot Olympiad (WRO
+                            HK)</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Golden Lego &amp; Best
+                            Engineering</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-civic')">
+                    <span class="text-3xl">🏛️</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">Civic Education Club
+                            Leadership</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Outstanding Chairperson Award
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-bigbrother')">
+                    <span class="text-3xl">🤝</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">Big Brother &amp; Sister
+                            Scheme</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Certificate of Excellence</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-lowaltitude')">
+                    <span class="text-3xl">🚁</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2025</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">GBA Academic Low Altitude
+                            Flight</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Certificate of Appreciation
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-ict-prize')">
+                    <span class="text-3xl">💻</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2024</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">School Academic Subject
+                            Prize</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">First in ICT / 第一名</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start bg-white dark:bg-darkcard rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all duration-300 shadow-md cursor-pointer hover:-translate-y-1"
+                    onclick="openDrawer('award-fitness')">
+                    <span class="text-3xl">🏃</span>
+                    <div>
+                        <p class="font-mono text-xs text-slate-400 mb-1">2020 - 2026</p>
+                        <p class="font-semibold text-slate-900 dark:text-white 2xl:text-xl">Physical Fitness Award
+                            Scheme</p>
+                        <p class="text-sm text-cyan-600 dark:text-cyan-400 font-mono mt-1">Gold &amp; Silver Medals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXCHANGE ==================== -->
+    <section id="exchange"
+        class="py-24 2xl:py-32 bg-white dark:bg-darkcard/30 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-5xl 2xl:max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 2xl:mb-20 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">05.</span> Exchange Programmes</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-xl p-6 2xl:p-10 flex flex-col h-full hover:border-cyan-500 transition-all shadow-md reveal delay-100">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-xs font-mono px-3 py-1 bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 rounded-full">🇮🇪
+                            23-Day Immersive Study</span>
+                        <span class="text-xs font-mono text-slate-400">2025</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Technology Enhanced English
+                        Language Learning Program</h3>
+                    <p class="text-xs text-slate-400 font-mono mb-4">Future Learning Language School · Dublin, Ireland
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        Participated in a comprehensive 3-week Technology and Culture Study Tour in Ireland, living with
+                        a local host family for authentic cultural integration.
+                        Completed 66 hours of specialized training that combined intercultural communication with
+                        intensive afternoon STEAM workshops.
+                        Achieved an Independent Level in collaborative problem-solving and certified at a Proficient
+                        Level in digital information searching, data storage organization, and reliable sourcing.
+                    </p>
+                    <div
+                        class="bg-white dark:bg-darkcard p-3 rounded-lg border border-slate-100 dark:border-slate-800/60 mb-4 font-mono text-xs italic text-slate-500 dark:text-slate-400">
+                        "Super respectful... exceptionally hardworking and focused, her work speaks louder than her
+                        words." – Academic Evaluation Remarks
+                    </div>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-2 pt-2">
+                        <span>• Language Mastery</span>
+                        <span>• STEAM Prototyping</span>
+                        <span>• Collaborative Logic</span>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-slate-50 dark:bg-darkbg border border-slate-200 dark:border-slate-700 rounded-xl p-6 2xl:p-10 flex flex-col h-full hover:border-emerald-500 transition-all shadow-md reveal delay-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <span
+                            class="text-xs font-mono px-3 py-1 bg-emerald-100 dark:bg-emerald-400/10 text-emerald-700 dark:text-emerald-400 rounded-full">🇲🇾
+                            Arts &amp; Heritage</span>
+                        <span class="text-xs font-mono text-slate-400">School Nominated</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Malaysia Cultural Exchange
+                        Programme</h3>
+                    <p class="text-xs text-slate-400 font-mono mb-4">Official School Delegation</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        Selected to observe regional arts, localized social environments, and architectural heritage
+                        rules inside Malaysia. Actively broadened international insight to evaluate sustainable
+                        community design targets outside domestic scopes.
+                    </p>
+                    <div class="font-mono text-xs text-slate-500 flex flex-wrap gap-2 pt-2">
+                        <span>• Regional Arts Study</span>
+                        <span>• Global Scale Awareness</span>
+                        <span>• Public Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education" class="py-24 2xl:py-32">
+        <div class="max-w-4xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <h2 class="text-3xl 2xl:text-5xl font-bold text-slate-900 dark:text-white font-mono"><span
+                        class="text-cyan-600 dark:text-cyan-400">06.</span> Education History</h2>
+                <div class="h-px bg-slate-300 dark:bg-slate-700 flex-grow"></div>
+            </div>
+
+            <div class="space-y-12 reveal delay-100">
+                <div class="relative pl-8 border-l-2 border-cyan-500">
+                    <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-[9px] top-1"></div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">S.K.H. Bishop Baker Secondary School
+                    </h3>
+                    <p class="text-slate-500 font-mono text-sm mt-1 mb-4">Sep 2020 – May 2026 · Hong Kong Diploma of
+                        Secondary Education (HKDSE)</p>
+                    <ul class="list-none space-y-2 text-slate-600 dark:text-slate-400 font-mono text-sm">
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span> Elective Subsets:
+                            Information &amp; Communication Technology (ICT), Physics, Extended Mathematics M2</li>
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span> Leadership
+                            Activities: Class Secretary (21-26), Chairperson of Civic Education Club (24-25)</li>
+                        <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400">▹</span> Conduct Standard
+                            Evaluation: Very Good</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 rounded-xl p-6 md:p-8 font-mono shadow-inner">
+                    <div class="flex items-center gap-3 mb-4 text-emerald-600 dark:text-emerald-400">
+                        <i class="fas fa-quote-left text-2xl"></i>
+                        <span class="text-xs uppercase tracking-wider font-bold">Official School Testimonial General
+                            Remarks</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                        "Hau-ying is an optimistic and approachable student with a pronounced passion for learning,
+                        especially
+                        in Information and Communication Technology. Having competed in various local and mainland
+                        science and technology competitions, she has demonstrated her capabilities in teamwork, problem-
+                        solving, creative thinking, and self-directed learning, earning several awards in the process.
+                        Hau-ying
+                        has lofty goals and continually considers her social responsibilities; she aspires to apply
+                        technology
+                        to solve real-world problems and benefit communities. She actively seeks enriching experiences,
+                        having participated in various exchange programmes, such as experiencing local arts and culture
+                        in
+                        Malaysia and immersing herself in the learning and living environment in Ireland.
+                        "
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 text-center font-mono text-xs text-slate-500">
+        <p>© 2026 Katy Hau-ying. Built with Tailwind CSS &amp; Vanilla JavaScript.</p>
+        <p class="mt-1 text-slate-400">Optimized for Adaptive Viewing Across Mobile, Tablets, Desktop &amp; Television
+            Hardware Screens.</p>
+    </footer>
+
+    <div id="overlay-backdrop"
+        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"
+        onclick="closeDrawer()"></div>
+
+    <div id="details-drawer"
+        class="fixed top-0 right-0 h-full w-full sm:w-[500px] 2xl:w-[700px] bg-white dark:bg-darkbg z-50 shadow-2xl border-l border-slate-200 dark:border-slate-800 translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span id="drawer-emoji" class="text-2xl">🏆</span>
+                <span id="drawer-meta" class="text-xs font-mono text-slate-400 uppercase tracking-wider">Honor
+                    Criteria</span>
+            </div>
+            <button onclick="closeDrawer()"
+                class="text-slate-400 hover:text-slate-600 dark:hover:text-white p-2 text-lg">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="p-8 space-y-6 flex-grow overflow-y-auto">
+            <h3 id="drawer-title" class="text-2xl 2xl:text-4xl font-bold text-slate-900 dark:text-white">Award Name
+                Title</h3>
+
+            <div id="drawer-award-badge"
+                class="inline-block px-3 py-1.5 rounded-lg bg-cyan-100 dark:bg-cyan-400/10 text-cyan-700 dark:text-cyan-400 font-mono text-sm font-bold border border-cyan-200 dark:border-cyan-800/30">
+                Prize Status Status
+            </div>
+
+            <div class="space-y-4">
+                <h4
+                    class="font-mono text-xs text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+                    Overview Details</h4>
+                <p id="drawer-desc" class="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
+                    System parameters explanation.</p>
+            </div>
+
+            <div class="space-y-4">
+                <h4
+                    class="font-mono text-xs text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-slate-800 pb-2">
+                    Technical Insight Metrics Gained</h4>
+                <ul id="drawer-bullets" class="space-y-3 font-mono text-xs md:text-sm text-slate-500 list-none">
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-darkcard/20 font-mono text-xs text-slate-400 flex justify-between items-center">
+            <span>Issuing Body / Provider:</span>
+            <span id="drawer-org" class="font-bold text-slate-600 dark:text-slate-300">Organization Name</span>
+        </div>
+    </div>
+
+    <!-- ==================== DRAWER DATA ==================== -->
+    <script>
+        // --- 1. Comprehensive Drawer Database Infrastructure Layer Mapping ---
+        const drawerData = {
+            'award-smartcity': {
+                emoji: '🏙️',
+                meta: '2025 · Hong Kong Polytechnic University',
+                title: 'Build a Smart City Competition 2025',
+                award: '🥈 1st Runner-up (亞軍)',
+                desc: 'A high-level tertiary challenge hosted by the Department of Land Surveying and Geo-Informatics at PolyU. The project resolved municipal complexities surrounding real-world urban issues.',
+                bullets: [
+                    '<strong>Tech Matrix:</strong> Advanced mastery of QGIS layers, Python geospatial plotting scripts, and clean MySQL storage architectures.',
+                    '<strong>Data Fusion:</strong> Learned to analyze combined feeds from CSDI portals, Open Data streams, and live web scraping engines.'
+                ],
+                org: 'The Hong Kong Polytechnic University (PolyU)'
+            },
+            'award-hackathon': {
+                emoji: '🤖',
+                meta: '2025 · CUHK Faculty of Engineering & Education',
+                title: '中大賽馬會「智」為未來計劃︰AI Hackathon 2025',
+                award: '🏅 Certificate of Merit (優異獎)',
+                desc: 'An intensive, single-day rapid prototyping sprint testing technical adaptability, code deployment under extreme time limits, and machine learning structures.',
+                bullets: [
+                    '<strong>AI Foundations:</strong> Gained direct interest and training in configuring practical programming and problem-solving modules.',
+                    '<strong>Agile Operations:</strong> Exercised dynamic delegation and strategic logic loops inside a rapid engineering workspace.'
+                ],
+                org: 'The Chinese University of Hong Kong (CUHK)'
+            },
+            'award-cadet': {
+                emoji: '🛡️',
+                meta: '2025 · HKIRC / DPO / CSTCB',
+                title: '網絡攻防精英培訓暨攻防大賽 2025 (CADET2)',
+                award: '🏅 Certificate of Merit (優異獎)',
+                desc: 'An intensive technical program tracking cyber-readiness, offensive vectors, and infrastructure resilience countermeasures.',
+                bullets: [
+                    '<strong>Simulated Scenarios:</strong> Executed operations during live, high-pressure 48-hour network defense simulation windows.',
+                    '<strong>Modern Threat Intel:</strong> Trained across professional-grade environments to safeguard next-generation networking systems.'
+                ],
+                org: 'Hong Kong Internet Registration Corporation, Digital Policy Office, & Cyber Security and Technology Crime Bureau'
+            },
+            'award-chongqing': {
+                emoji: '🇨🇳',
+                meta: '2024 · Chongqing, Mainland China',
+                title: '2024年重慶中國移動萬物比鄰物聯網創客馬拉松大賽',
+                award: '🌟 Outstanding Award (高校組優秀獎)',
+                desc: 'Advanced as an international finalist from Hong Kong selection brackets directly to the cross-border university bracket finals in Chongqing.',
+                bullets: [
+                    '<strong>Global Perspective:</strong> Competing in mainland tech corridors greatly enhanced situational engineering insight and international scale.',
+                    '<strong>Enterprise Review:</strong> Defended smart logistical structures in front of major industry stakeholders and enterprise panels.'
+                ],
+                org: '中國移動 (China Mobile)'
+            },
+            'award-onenet': {
+                emoji: '🏆',
+                meta: '2024 · China Mobile HK',
+                title: '第五屆中國移動OneNET科創比賽',
+                award: '卓越獎 Excellence Award (Top 4 Finalist)',
+                desc: 'A comprehensive city-wide development challenge creating operational answers for logistical and network distribution networks.',
+                bullets: [
+                    '<strong>Pipeline Architecture:</strong> Deployed real-time MQTT messaging relays tied seamlessly to dynamic visual dashboards.',
+                    '<strong>Geospatial Overlay:</strong> Integrated geographic data points using Matplotlib libraries alongside custom Map APIs.'
+                ],
+                org: '中國移動 China Mobile'
+            },
+            'award-iot-creative': {
+                emoji: '🚢',
+                meta: '2023 - 2024 · Hong Kong',
+                title: '香港好故事多元才能發展計劃 - 共建香港物聯網創意發揮比賽',
+                award: '🥇 1st Place / Champion / 冠軍',
+                desc: 'Focused on designing smart infrastructures capable of targeting supply chain friction and optimizing local transit efficiency.',
+                bullets: [
+                    '<strong>Social Engineering:</strong> Tailored working IoT system models to solve real-world transit, freight, and supply challenges.',
+                    '<strong>Creative Synergy:</strong> Directed cross-disciplinary teamwork to prototype operational embedded device layouts.'
+                ],
+                org: '多元學習坊 · 教育倡行 · 星島日報'
+            },
+            'award-wro': {
+                emoji: '🤖',
+                meta: '2023 · Robotics Division',
+                title: 'World Robot Olympiad 2023 - Hong Kong Robot Challenge',
+                award: '🥇 Golden Lego Award & Best Engineering Design',
+                desc: 'A prominent multi-school robotics challenge testing mechanics, embedded logic loop programming, and spatial course navigational stability.',
+                bullets: [
+                    '<strong>Autonomous Logic:</strong> Scripted movement rules to address complex navigation courses under precise parameters.',
+                    '<strong>Structural Excellence:</strong> Awarded Best Engineering Design for mechanical durability and system safety features.'
+                ],
+                org: 'WRO Hong Kong Organising Committee'
+            },
+            'award-civic': {
+                emoji: '🏛️',
+                meta: '2024 - 2025 · School Governance',
+                title: 'Civic Education Club Leadership',
+                award: '🏆 Outstanding Club Chairperson Award',
+                desc: 'Recognized for excellent organizational planning, public management, and campus-wide governance systems.',
+                bullets: [
+                    '<strong>Event Architecture:</strong> Coordinated large-scale public workshops, informational seminars, and school funfairs for junior students.',
+                    '<strong>Public Administration:</strong> Moderated team workloads, budget tracks, and structural targets inside a student group.'
+                ],
+                org: 'S.K.H. Bishop Baker Secondary School'
+            },
+            'award-bigbrother': {
+                emoji: '🤝',
+                meta: '2023 - 2025 · Campus Community Services',
+                title: 'Big Brother and Sister Mentorship Scheme',
+                award: '🥇 Certificate of Excellence',
+                desc: 'A dedicated multi-year academic and mental adjustment support service pairing senior mentors with incoming Form 1 secondary students.',
+                bullets: [
+                    '<strong>Community Guidance:</strong> Provided structural school adjustments, advisory peer workshops, and active support for junior classes.',
+                    '<strong>Empathetic Skills:</strong> Mastered clear interpersonal communication, community relationship safety, and peer assistance strategies.'
+                ],
+                org: 'S.K.H. BBSS & Friends of Scouting Social Work Service'
+            },
+            'award-lowaltitude': {
+                emoji: '🚁',
+                meta: '2024 - 2025 · Regional Aerospace',
+                title: 'The Greater Bay Area Academic Low Altitude Flight Challenge',
+                award: '📜 Certificate of Appreciation / 嘉許狀',
+                desc: 'Explored low-altitude aerospace flight use cases, drone formations, and future regional smart city drone operations across the GBA territory.',
+                bullets: [
+                    '<strong>Aerospace Applications:</strong> Analyzed technical case implementations for automated aerial operations and flight path optimization.',
+                    '<strong>Regional Tech Sync:</strong> Explored regulatory standards and flight metrics detailing next-generation smart logistics.'
+                ],
+                org: 'Greater Bay Area Low Altitude Aerospace Challenge Organisers'
+            },
+            'award-ict-prize': {
+                emoji: '💻',
+                meta: '2023 - 2024 · Academic Top Ranking',
+                title: 'Academic Subject Prize: Information & Communication Technology',
+                award: '🥇 First Place (第一名)',
+                desc: 'Awarded for attaining the highest overall score and ranking first in the entire academic year cohort for ICT engineering courses.',
+                bullets: [
+                    '<strong>Theoretical Excellence:</strong> Demonstrated elite conceptual understanding of software pipelines, security metrics, and computer science bases.',
+                    '<strong>Practical Application:</strong> Translated classroom architecture rules directly into high-scoring real-world project portfolios.'
+                ],
+                org: 'S.K.H. Bishop Baker Secondary School'
+            },
+            'award-fitness': {
+                emoji: '🏃',
+                meta: '2020 - 2026 · Longitudinal Physical Development',
+                title: 'Hong Kong Physical Fitness Award Scheme',
+                award: '🏅 Gold & Silver Awards Across Multiple Tiers',
+                desc: 'Maintained excellent metrics across cardiovascular, endurance, and strength targets across secondary school cycles.',
+                bullets: [
+                    '<strong>Performance Tiers:</strong> Achieved consecutive Gold Awards (22-23, 23-24) and Silver Awards (24-25).',
+                    '<strong>Discipline & Focus:</strong> Maintained regular, healthy lifestyle habits alongside strenuous high-intensity research work schedules.'
+                ],
+                org: 'Hong Kong Physical Fitness Scheme Organising Committee'
+            }
+        };
+
+        // --- 2. Drawer Slideout UI Interaction Handlers ---
+        function openDrawer(id) {
+            const data = drawerData[id];
+            if (!data) return;
+
+            document.getElementById('drawer-emoji').innerText = data.emoji;
+            document.getElementById('drawer-meta').innerText = data.meta;
+            document.getElementById('drawer-title').innerText = data.title;
+            document.getElementById('drawer-award-badge').innerHTML = data.award;
+            document.getElementById('drawer-desc').innerHTML = data.desc;
+            document.getElementById('drawer-org').innerText = data.org;
+
+            const listContainer = document.getElementById('drawer-bullets');
+            listContainer.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.className = 'flex gap-2 items-start';
+                li.innerHTML = `<span class="text-cyan-500">▹</span> <span>${b}</span>`;
+                listContainer.appendChild(li);
+            });
+
+            const backdrop = document.getElementById('overlay-backdrop');
+            const drawer = document.getElementById('details-drawer');
+
+            backdrop.classList.remove('hidden');
+            setTimeout(() => backdrop.classList.add('opacity-100'), 10);
+            drawer.classList.remove('translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeDrawer() {
+            const backdrop = document.getElementById('overlay-backdrop');
+            const drawer = document.getElementById('details-drawer');
+
+            backdrop.classList.remove('opacity-100');
+            drawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+            setTimeout(() => backdrop.classList.add('hidden'), 300);
+        }
+
+        // --- 3. Font Resizing (Accessibility Mechanics) ---
+        const htmlRoot = document.documentElement;
+        let currentSize = 16;
+        document.getElementById('font-inc-btn').addEventListener('click', () => {
+            if (currentSize < 24) { currentSize += 1; htmlRoot.style.fontSize = currentSize + 'px'; }
+        });
+        document.getElementById('font-dec-btn').addEventListener('click', () => {
+            if (currentSize > 12) { currentSize -= 1; htmlRoot.style.fontSize = currentSize + 'px'; }
+        });
+
+        // --- 4. Adaptive Reveal Scroll Animations Trigger ---
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            reveals.forEach(r => {
+                const windowHeight = window.innerHeight;
+                const elementTop = r.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) r.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // --- 5. Light/Dark Mode Local Storage Toggle Logic ---
+        const toggleThemeBtns = document.querySelectorAll('.toggle-theme-btn');
+        const toggleTheme = () => {
+            htmlRoot.classList.toggle('dark');
+            const isDark = htmlRoot.classList.contains('dark');
+            localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+        };
+        toggleThemeBtns.forEach(btn => btn.addEventListener('click', toggleTheme));
+        if (localStorage.getItem('portfolio-theme') === 'light') htmlRoot.classList.remove('dark');
+
+        // --- 6. Handheld Mobile Menu Overlay Mechanics ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
